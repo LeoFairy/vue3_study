@@ -5,28 +5,12 @@
     <button @click="changeName">修改姓名</button>
     <button @click="changeAge">修改年龄</button>
     <button @click="showTel"> 查看联系方式</button>
-    <hr>
-    <h2>测试:{{ a }}</h2>
-    <h2>测试:{{ c }}</h2>
-
-    <button @click="test">测试 </button>
   </div>
 </template>
 
 <script lang="ts">
   export default {
     name: 'Person',
-    data () {
-      return {
-        a: 100,
-        c:this.name
-      }
-    },
-    methods: {
-      test() { 
-        console.log('~~')
-      }
-    },
     setup() {
       //setup中的this是 undefined
       //数据  此时数据不是响应式的

@@ -16,7 +16,6 @@
 <script lang="ts">
   export default {
     name: 'Person',
-    //setup 优先于data运行， 两者可共存 data能用setup中的， setup不可用data的。
     data () {
       return {
         a: 100,

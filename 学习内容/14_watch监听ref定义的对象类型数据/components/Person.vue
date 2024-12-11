@@ -35,10 +35,9 @@ function changePerson() {
 //watch 第二个参数：监视的回调
 //watch 第三个参数：配置对象 （deep、immediate等）
 
-const stopWatch = watch(person, (newValue, oldValue) => {
+watch(person, (newValue, oldValue) => {
   // 如果前后修改的是仍然是同一个对象里面的属性，那么newValue和oldValue 是一样的
   console.log('person变化了', newValue, oldValue);
-
 }, { deep: true })
 
 </script>

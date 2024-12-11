@@ -1,9 +1,8 @@
 <template>
   <div class="person">
-    <h1>情况二:监视【ref】定义的【对象类型】数据</h1>
+    <h1>情况三:监视【reactive】定义的【对象类型】数据</h1>
     <h2>姓名{{ person.name }}</h2>
     <h2>年龄{{ person.age }}</h2>
-
     <button @click="changeName">修改名字</button>
     <button @click="changeAge">修改年龄</button>
     <button @click="changePerson">修改人</button>
@@ -12,24 +11,25 @@
 </template>
 
 <script setup lang="ts" name="Person123">
-import { ref, watch } from 'vue'
+import { reactive, watch } from 'vue'
 //数据
-let person = ref({
+let person = reactive({
   name: '张三',
   age: 18
 })
 
 //方法：
 function changeName() {
-  person.value.name += '~'
+  person.name += '~'
 }
 function changeAge() {
-  person.value.age += 1
+  person.age += 1
 }
 function changePerson() {
-  person.value = { name: '李四', age: 19 }
+
+  Object.assign(person, { name: '李四', age: 19 })
 }
-//监视：情况二:监视【ref】定义的【对象类型】数据 监视到的是地址，
+//监视：情况三:监视【reactive】定义的【对象类型】数据  
 // 若要监视内部数据的变化， 需要手动开启深度监视
 //watch 第一个参数：被监视的数据
 //watch 第二个参数：监视的回调

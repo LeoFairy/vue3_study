@@ -11,7 +11,7 @@
 
 <script setup lang="ts" name="Person">
 import { withDefaults } from 'vue'
-import { type Persons } from '@/types'
+import { type Persons } from '../types'
 
 //接收 a 和list
 // defineProps(['a', 'list'])

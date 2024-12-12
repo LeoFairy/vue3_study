@@ -27,7 +27,7 @@ const  router = createRouter({
       children:[
         { 
           name:'xiang',
-          path:'detail', //子路由路径不用写/
+          path:'detail/:id/:title/:content?', //子路由路径不用写/
           component:Detail
         }
       ]

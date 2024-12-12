@@ -10,8 +10,8 @@
 </template>
 
 <script setup lang="ts" name="Person">
-import useSum from '@/hooks/useSum';
-import useDog from '@/hooks/useDog';
+import useSum from '../hooks/useSum';
+import useDog from '../hooks/useDog';
 
 const { sum, add, bigSum } = useSum()
 const { dogList, getDog } = useDog()

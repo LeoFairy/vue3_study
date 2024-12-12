@@ -5,6 +5,14 @@
 </template>
 
 <script setup lang="ts" name="About">
+import { onMounted, onUnmounted } from 'vue';
+
+onMounted(() => {
+  console.log('about组件挂载');
+})
+onUnmounted(() => {
+  console.log('about组件卸载');
+})
 
 </script>
 

@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script setup lang="ts" name="Person123">
+<script setup lang="ts" name="Person">
 
 </script>
 

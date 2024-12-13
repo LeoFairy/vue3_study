@@ -1,75 +1,27 @@
 <template>
   <div class="app">
-    <h2>求和为:{{ sum }}</h2>
-    <h2>名字为:{{ person.name }}</h2>
-    <h2>年龄为:{{ person.age }}</h2>
-    <h2>汽车:{{ car }}</h2>
-
-    <button @click="changeSum">sum+1</button>
-    <button @click="changeName">修改名字</button>
-    <button @click="changeAge">修改姓名</button>
-    <button @click="changePerson">修改整个人</button>
-    <span>|</span>
-    <button @click="changeBrand">修改品牌</button>
-    <button @click="changeColor">修改颜色</button>
-    <button @click="changeEngine">修改发动机</button>
+    <h2>我是App组件</h2>
+    <Suspense>
+      <template v-slot:default>
+        <Child />
+      </template>
+      <!-- <template v-slot:fallback> -->
+      <!-- <h2>加载中......</h2> -->
+      <!-- </template> -->
+    </Suspense>
   </div>
 </template>
 
 <script setup lang="ts" name="App">
-import { ref, shallowRef, shallowReactive, reactive } from 'vue';
-
-let sum = shallowRef(0)
-let person = shallowRef({
-  name: '张三',
-  age: 18
-})
-
-let car = reactive({
-  brand: '奔驰',
-  options: {
-    color: '红色',
-    engine: 'v8'
-  }
-})
-//shallowRef   1  4 可以用 。  name和 age不可以响应式
-
-function changeSum() {
-  sum.value += 1
-}
-function changeName() {
-  person.value.name = '李四'
-}
-function changeAge() {
-  person.value.age = 20
-}
-function changePerson() {
-  person.value = { name: 'tony', age: 200 }
-}
-
-/* ********** */
-function changeBrand() {
-  car.brand = '宝马'
-}
-function changeColor() {
-  car.options.color = '紫色'
-}
-function changeEngine() {
-  car.options.engine = 'V12'
-}
-
+import { Suspense } from 'vue'
+import Child from './Child.vue'
 </script>
 
-<style scoped>
+<style>
 .app {
   background-color: #ddd;
   border-radius: 10px;
-  box-shadow: 0 0 10px;
   padding: 10px;
-
-}
-
-button {
-  margin-right: 5px;
+  box-shadow: 0 0 10px;
 }
 </style>
